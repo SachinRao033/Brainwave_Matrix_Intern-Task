@@ -113,5 +113,5 @@ Step 10:-Output -- Select Auto Scaling Group.
  ![WEB Application running Image](https://github.com/user-attachments/assets/2cd6f73f-4a27-477c-b8c5-ead74188fea4)
 
  ![Web Application running Image](https://github.com/user-attachments/assets/73fc6a4e-4682-499c-bd98-c0764e5dd093)
+ 
 
-<h3 Align : Center> Thank You </h3>
