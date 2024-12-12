@@ -1,4 +1,4 @@
-# Deploy-the-Web-Application-in-AWS-Kubernetes
+# Deploy-the-Web-Application-in-AWS & Kubernetes
 
 "Task 1(Video link): https://drive.google.com/file/d/1sn4aBdfJtUpfDtsYAoxPHQaixZG5vT-l/view?usp=sharing "
 
@@ -17,10 +17,10 @@ Step 1:- Launch a New EC2 Instance (Amazon Linux - t2.micro)
 Step 2:- Install kubectl (Kubernetes CLI)
 
 •	After connecting to the EC2 instance, run the following commands to install kubectl:  
-  --"curl -O https://s3.us-west-2.amazonaws.com/amazon-eks/1.30.0/2024-05-12/bin/linux/amd64/kubectl  
-     sudo mv ./kubectl /usr/local/bin   
-     chmod +x ./kubectl  
-     kubectl version"   
+   --"curl -O https://s3.us-west-2.amazonaws.com/amazon-eks/1.30.0/2024-05-12/bin/linux/amd64/kubectl  
+      sudo mv ./kubectl /usr/local/bin   
+      chmod +x ./kubectl  
+      kubectl version"   
 •	This will download kubectl, move it to /usr/local/bin for execution, apply the necessary permissions, and verify the version.  
 
  ![Install kubectl Image](https://github.com/user-attachments/assets/7603c1fa-5a53-4832-badb-85f5444f0a51)
@@ -39,29 +39,31 @@ Step 3:- Install AWS CLI
 Step 4:- Install eksctl (EKS Cluster Management Tool)
 
 •	To simplify EKS cluster creation, install eksctl:   
-"curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp  
- sudo mv /tmp/eksctl /usr/local/bin  
- eksctl version"  
+   --"curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp    
+      sudo mv /tmp/eksctl /usr/local/bin    
+      eksctl version"    
 •	This command downloads and installs eksctl, a command-line tool for managing EKS clusters.
  
+![Install eksctl Image](https://github.com/user-attachments/assets/64409869-2ded-48c4-ae03-1ac9f7a29657)
 
 Step 5:- Create a New IAM Role
-•	Go to the IAM section in the AWS Console and create a new role with the following permissions:
-o	IAM FullAccess – We need create all these roles individually (or) otherwise we give one role is “AdministratorAccess” (VPC FullAccess,EC2 FullAccess,CloudFormation FullAccess).
+•	Go to the IAM section in the AWS Console and create a new role with the following permissions:  
+  o	IAM FullAccess – We need create all these roles individually (or) otherwise we give one role is “AdministratorAccess” (VPC FullAccess,EC2    FullAccess,CloudFormation FullAccess).   
  
+![IAM Role Image](https://github.com/user-attachments/assets/af5371ee-5af4-496e-a779-7f1c1f4a3e8b)
 
-Step 6:- Attach IAM Role to the EC2 Instance
-•	Attach the created role to the EC2 instance used as the management host. This allows the instance to interact with other AWS services.
- 
+Step 6:- Attach IAM Role to the EC2 Instance  
+•	Attach the created role to the EC2 instance used as the management host. This allows the instance to interact with other AWS services.  
+
+![Attach IAM role to EC2 Instance](https://github.com/user-attachments/assets/db383e7a-1100-4183-adbc-8bba42a9d24f)
 
 
- 
 
-Step 7:- Create EKS Cluster using eksctl
+Step 7:- Create EKS Cluster using eksctl 
 
-•	To create the EKS cluster, use the eksctl command. 
-Mumbai (ap-south-1):
-eksctl create cluster --name demo-cluster --region ap-south-1 --node-type t2.micro --zones ap-south-1a,ap-south-1b
+•	To create the EKS cluster, use the eksctl command.  
+   --Mumbai (ap-south-1):
+    "eksctl create cluster --name demo-cluster --region ap-south-1 --node-type t2.micro --zones ap-south-1a,ap-south-1b "
 
 •	This will create a new EKS cluster in the specified region, using the specified instance type and zones.
  
