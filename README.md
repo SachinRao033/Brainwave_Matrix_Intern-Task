@@ -5,6 +5,7 @@ Task 1(Video link): https://drive.google.com/file/d/1sn4aBdfJtUpfDtsYAoxPHQaixZG
 DEPLOY A WEB APPLICATION IN AWS/KUBERNETES
 
 Step 1:- Launch a New EC2 Instance (Amazon Linux - t2.micro)
+
 •	Go to the AWS Management Console and launch a new EC2 instance.
 •	Choose "Amazon Linux 2 AMI" as the operating system.
 •	Select an instance type (t2.micro is a good choice for testing purposes and free tier).
@@ -13,8 +14,8 @@ Step 1:- Launch a New EC2 Instance (Amazon Linux - t2.micro)
  
 
 Step 2:- Install kubectl (Kubernetes CLI)
-•	After connecting to the EC2 instance, run the following commands to install kubectl:
 
+•	After connecting to the EC2 instance, run the following commands to install kubectl:
 curl -O https://s3.us-west-2.amazonaws.com/amazon-eks/1.30.0/2024-05-12/bin/linux/amd64/kubectl
 sudo mv ./kubectl /usr/local/bin
 chmod +x ./kubectl
@@ -24,8 +25,8 @@ kubectl version
  
 
 Step 3:- Install AWS CLI
-•	Install the AWS Command Line Interface (CLI) using these commands:
 
+•	Install the AWS Command Line Interface (CLI) using these commands:
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 unzip awscliv2.zip
 sudo ./aws/install
@@ -35,8 +36,8 @@ aws --version
  
 
 Step 4:- Install eksctl (EKS Cluster Management Tool)
-•	To simplify EKS cluster creation, install eksctl:
 
+•	To simplify EKS cluster creation, install eksctl:
 curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
 sudo mv /tmp/eksctl /usr/local/bin
 eksctl version
@@ -57,8 +58,8 @@ Step 6:- Attach IAM Role to the EC2 Instance
  
 
 Step 7:- Create EKS Cluster using eksctl
-•	To create the EKS cluster, use the eksctl command. 
 
+•	To create the EKS cluster, use the eksctl command. 
 Mumbai (ap-south-1):
 eksctl create cluster --name demo-cluster --region ap-south-1 --node-type t2.micro --zones ap-south-1a,ap-south-1b
 
@@ -68,8 +69,8 @@ eksctl create cluster --name demo-cluster --region ap-south-1 --node-type t2.mic
  
 
 Step 8:- Deploy Nginx Pods on Kubernetes
-•	Create a Deployment for Nginx: To deploy an given demo-web-httpd application with 1 replicas:
 
+•	Create a Deployment for Nginx: To deploy an given demo-web-httpd application with 1 replicas:
 kubectl create deployment demo-web-httpd  --image=ss1927/httpd          --replicas=1   --port=80
 
 •	Check the Status:
@@ -81,8 +82,8 @@ Kubectl run webapp –image=ss1927/httpd
  
 
 Step 9:- Expose the Deployment as a Service
-•	To expose the Nginx deployment via a LoadBalancer, follow these steps:
 
+•	To expose the Nginx deployment via a LoadBalancer, follow these steps:
 Expose the Deployment: kubectl expose deployment demo--web-httpd    --port=80 --type=LoadBalancer
 
 Check the Service: To see the service details and external IP (LoadBalancer IP)
