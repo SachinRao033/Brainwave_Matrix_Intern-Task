@@ -15,7 +15,7 @@ Step 1:- Launch a New EC2 Instance (Amazon Linux - t2.micro)
 
 Step 2:- Install kubectl (Kubernetes CLI)
 
-•	After connecting to the EC2 instance, run the following commands to install kubectl:
+•	After connecting to the EC2 instance, run the following commands to install kubectl:  
 curl -O https://s3.us-west-2.amazonaws.com/amazon-eks/1.30.0/2024-05-12/bin/linux/amd64/kubectl
 sudo mv ./kubectl /usr/local/bin
 chmod +x ./kubectl
