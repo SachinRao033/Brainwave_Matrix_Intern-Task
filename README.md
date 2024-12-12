@@ -11,7 +11,7 @@ Step 1:- Launch a New EC2 Instance (Amazon Linux - t2.micro)
 •	Create new key pair and download it.Configure security groups, allowing SSH (port 22) and HTTP (port 80).
 •	Launch the instance and connect to it via SSH (In MobaXterm Tool).
 
-![Screenshot 2024-12-11 113842](https://github.com/user-attachments/assets/d5594343-6000-4423-a2b6-f03f0a709b6d)
+![EC2 Instance Image](https://github.com/user-attachments/assets/d5594343-6000-4423-a2b6-f03f0a709b6d)
 
 Step 2:- Install kubectl (Kubernetes CLI)
 
@@ -20,8 +20,8 @@ curl -O https://s3.us-west-2.amazonaws.com/amazon-eks/1.30.0/2024-05-12/bin/linu
 sudo mv ./kubectl /usr/local/bin
 chmod +x ./kubectl
 kubectl version
-
 •	This will download kubectl, move it to /usr/local/bin for execution, apply the necessary permissions, and verify the version.
+
  
 
 Step 3:- Install AWS CLI
