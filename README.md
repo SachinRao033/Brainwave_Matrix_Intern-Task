@@ -1,48 +1,47 @@
 # Deploy-the-Web-Application-in-AWS-Kubernetes
 
-Task 1(Video link): https://drive.google.com/file/d/1sn4aBdfJtUpfDtsYAoxPHQaixZG5vT-l/view?usp=sharing 
+"Task 1(Video link): https://drive.google.com/file/d/1sn4aBdfJtUpfDtsYAoxPHQaixZG5vT-l/view?usp=sharing "
 
 DEPLOY A WEB APPLICATION IN AWS/KUBERNETES
 
 Step 1:- Launch a New EC2 Instance (Amazon Linux - t2.micro)   
-•	Go to the AWS Management Console and launch a new EC2 instance.
-•	Choose "Amazon Linux 2 AMI" as the operating system.
-•	Select an instance type (t2.micro is a good choice for testing purposes and free tier).
-•	Create new key pair and download it.Configure security groups, allowing SSH (port 22) and HTTP (port 80).
-•	Launch the instance and connect to it via SSH (In MobaXterm Tool).
+
+•	Go to the AWS Management Console and launch a new EC2 instance.   
+•	Choose "Amazon Linux 2 AMI" as the operating system.  
+•	Select an instance type (t2.micro is a good choice for testing purposes and free tier).  
+•	Create new key pair and download it.Configure security groups, allowing SSH (port 22) and HTTP (port 80).  
+•	Launch the instance and connect to it via SSH (In MobaXterm Tool).  
 
 ![EC2 Instance Image](https://github.com/user-attachments/assets/d5594343-6000-4423-a2b6-f03f0a709b6d)
 
 Step 2:- Install kubectl (Kubernetes CLI)
 
 •	After connecting to the EC2 instance, run the following commands to install kubectl:  
-curl -O https://s3.us-west-2.amazonaws.com/amazon-eks/1.30.0/2024-05-12/bin/linux/amd64/kubectl  
-sudo mv ./kubectl /usr/local/bin   
-chmod +x ./kubectl  
-kubectl version   
-•	This will download kubectl, move it to /usr/local/bin for execution, apply the necessary permissions, and verify the version.
+  --"curl -O https://s3.us-west-2.amazonaws.com/amazon-eks/1.30.0/2024-05-12/bin/linux/amd64/kubectl  
+     sudo mv ./kubectl /usr/local/bin   
+     chmod +x ./kubectl  
+     kubectl version"   
+•	This will download kubectl, move it to /usr/local/bin for execution, apply the necessary permissions, and verify the version.  
 
  ![Install kubectl Image](https://github.com/user-attachments/assets/7603c1fa-5a53-4832-badb-85f5444f0a51)
 
-
 Step 3:- Install AWS CLI
 
-•	Install the AWS Command Line Interface (CLI) using these commands:
-curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-unzip awscliv2.zip
-sudo ./aws/install
-aws --version
-
+•	Install the AWS Command Line Interface (CLI) using these commands:   
+   --"curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"  
+      unzip awscliv2.zip  
+      sudo ./aws/install  
+      aws --version"  
 •	This installs the latest version of the AWS CLI and verifies the installation.
- 
+
+ ![Install AWS CLI Image](https://github.com/user-attachments/assets/04eb062f-fcd5-4d3f-8269-ec454325fa3b)
 
 Step 4:- Install eksctl (EKS Cluster Management Tool)
 
-•	To simplify EKS cluster creation, install eksctl:
-curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
-sudo mv /tmp/eksctl /usr/local/bin
-eksctl version
-
+•	To simplify EKS cluster creation, install eksctl:   
+"curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp  
+ sudo mv /tmp/eksctl /usr/local/bin  
+ eksctl version"  
 •	This command downloads and installs eksctl, a command-line tool for managing EKS clusters.
  
 
