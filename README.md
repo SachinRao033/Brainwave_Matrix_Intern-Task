@@ -89,10 +89,3 @@ Step 10:-Output -- Select Auto Scaling Group.
 
  
 
- 
-
- 
-
- 
-Thank You
--by Sachin Rao.D
