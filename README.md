@@ -4,14 +4,13 @@ Task 1(Video link): https://drive.google.com/file/d/1sn4aBdfJtUpfDtsYAoxPHQaixZG
 
 DEPLOY A WEB APPLICATION IN AWS/KUBERNETES
 
-Step 1:- Launch a New EC2 Instance (Amazon Linux - t2.micro)
-
+Step 1:- Launch a New EC2 Instance (Amazon Linux - t2.micro)   
 •	Go to the AWS Management Console and launch a new EC2 instance.
 •	Choose "Amazon Linux 2 AMI" as the operating system.
 •	Select an instance type (t2.micro is a good choice for testing purposes and free tier).
 •	Create new key pair and download it.Configure security groups, allowing SSH (port 22) and HTTP (port 80).
 •	Launch the instance and connect to it via SSH (In MobaXterm Tool).
- 
+ ![Alt Text]("C:\Users\sanju gaikwad\OneDrive\Pictures\Screenshots\Screenshot 2024-12-11 113842.png")
 
 Step 2:- Install kubectl (Kubernetes CLI)
 
