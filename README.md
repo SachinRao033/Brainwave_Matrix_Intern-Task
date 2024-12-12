@@ -57,53 +57,61 @@ Step 6:- Attach IAM Role to the EC2 Instance
 
 •	Attach the created role to the EC2 instance used as the management host. This allows the instance to interact with other AWS services.  
 
-![Attach IAM role to EC2 Instance](https://github.com/user-attachments/assets/a4475397-b88f-4f03-b33a-44480594e039)
+![Attach IAM role to EC2 Instance Image](https://github.com/user-attachments/assets/a4475397-b88f-4f03-b33a-44480594e039)
 
-![Attach IAM to EC2](https://github.com/user-attachments/assets/26b5d7ef-65a3-4f3d-8751-a41a6a8fca6d)
+![Attach IAM to EC2 Image](https://github.com/user-attachments/assets/26b5d7ef-65a3-4f3d-8751-a41a6a8fca6d)
 
 Step 7:- Create EKS Cluster using eksctl 
 
 •	To create the EKS cluster, use the eksctl command.  
-   --Mumbai (ap-south-1):
-    "eksctl create cluster --name demo-cluster --region ap-south-1 --node-type t2.micro --zones ap-south-1a,ap-south-1b "
-
+   --Mumbai (ap-south-1):   
+    "eksctl create cluster --name demo-cluster --region ap-south-1 --node-type t2.micro --zones ap-south-1a,ap-south-1b"
 •	This will create a new EKS cluster in the specified region, using the specified instance type and zones.
  
+![Creating EKS Cluster Image](https://github.com/user-attachments/assets/4bf0bb5c-889b-4874-94e4-7d2b654569f9)
 
- 
+![EKS CLuster Image](https://github.com/user-attachments/assets/54817a6b-3817-4a52-a327-1841928e9f25)
 
-Step 8:- Deploy Nginx Pods on Kubernetes
+Step 8:- Deploy Web-httpd Pods on Kubernetes
 
-•	Create a Deployment for Nginx: To deploy an given demo-web-httpd application with 1 replicas:
-kubectl create deployment demo-web-httpd  --image=ss1927/httpd          --replicas=1   --port=80
-
-•	Check the Status:
-List all resources - kubectl get all
-List the running pods - kubectl get pods
-
-•	After all this,To run the webapp with help this command:
-Kubectl run webapp –image=ss1927/httpd
- 
+•	Create a Deployment for web-httpd: To deploy an given demo-web-httpd application with 1 replicas:  
+    --"kubectl create deployment demo--web-httpd  --image=ss1927/httpd          --replicas=1   --port=80"   
+•	Check the Status:  
+List all resources - "kubectl get all"   
+List the running pods - "kubectl get pods"   
+•	After all this,To run the webapp with help this command:    
+    --"Kubectl run webapp –image=ss1927/httpd"
+    
+ ![Deploy Web-httpd Image](https://github.com/user-attachments/assets/8cf6d2c7-2a67-4915-8770-48e33e479b23)
 
 Step 9:- Expose the Deployment as a Service
 
-•	To expose the Nginx deployment via a LoadBalancer, follow these steps:
-Expose the Deployment: kubectl expose deployment demo--web-httpd    --port=80 --type=LoadBalancer
+•	To expose the Nginx deployment via a LoadBalancer, follow these steps:  
+    --Expose the Deployment: "kubectl expose deployment demo--web-httpd    --port=80 --type=LoadBalancer"  
+    --Check the Service: To see the service details and external IP (LoadBalancer IP)
+       "kubectl get services -o wide"
 
-Check the Service: To see the service details and external IP (LoadBalancer IP)
-kubectl get services -o wide
+ ![Excuted Load Balancer Code Image](https://github.com/user-attachments/assets/f204a65f-8030-4932-8ea8-087a60283438)
 
- 
- 
+ ![Created Load Balancer Image](https://github.com/user-attachments/assets/9117a461-098d-4d29-a060-a3c5fb11c526)
 
- 
+ ![Creating EC2 Instance help of Auto Scaling Image](https://github.com/user-attachments/assets/fb25c59d-ce92-4f0a-a8d5-4dc403589452)
 
-Step 10:-Output -- Select Auto Scaling Group.
-•	Open that selected auto scaling group and after it shows details of auto scaling.
-•	After click to copy the DNS name and go to any browser, just put the link to search.
- 
+Step 10:-Output -- Select Auto Scaling Group.  
 
- 
+•	Access the selected Auto Scaling group and review its detailed information, including configurations and instance statuses.   
+•	Locate and copy the DNS name associated with the Auto Scaling group. Open a web browser, paste the copied DNS name into the address bar, and press Enter to access the link.    
 
- 
+ ![Created AutoScaling Image](https://github.com/user-attachments/assets/815ecf06-17c4-4342-8555-e0dd5fe3d9c5)
 
+ ![Click to Copy the DNA Name Image](https://github.com/user-attachments/assets/4aeabba5-6ae4-476b-9f7d-0648ff1815c0)
+
+ ![Link to Serach Image](https://github.com/user-attachments/assets/09555aaa-49db-48b5-bd28-fb48b6b245b3)
+
+ ![Click to continue Image](https://github.com/user-attachments/assets/4ae44ec3-e193-495c-81b4-26e35441fdd4)
+
+ ![WEB Application running Image](https://github.com/user-attachments/assets/2cd6f73f-4a27-477c-b8c5-ead74188fea4)
+
+ ![Web Application running Image](https://github.com/user-attachments/assets/73fc6a4e-4682-499c-bd98-c0764e5dd093)
+
+<h3 Align : Center> Thank You </h3>
