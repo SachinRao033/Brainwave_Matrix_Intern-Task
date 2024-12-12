@@ -114,4 +114,6 @@ Step 10:-Output -- Select Auto Scaling Group.
 
  ![Web Application running Image](https://github.com/user-attachments/assets/73fc6a4e-4682-499c-bd98-c0764e5dd093)
  
+Conclusion:  
+	Deploying a web application on AWS using Kubernetes (EKS) offers a scalable and efficient solution. By leveraging EC2, EKS, and Kubernetes tools like kubectl and eksctl, the deployment process is streamlined. Integrating Auto Scaling ensures high availability and performance, while Kubernetes simplifies container management. This approach enhances flexibility and scalability, making it an ideal choice for modern cloud environments. Overall, AWS and Kubernetes together provide a robust platform for deploying and managing applications in production.  
 
