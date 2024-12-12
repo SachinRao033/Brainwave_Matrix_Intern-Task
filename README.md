@@ -10,7 +10,8 @@ Step 1:- Launch a New EC2 Instance (Amazon Linux - t2.micro)
 •	Select an instance type (t2.micro is a good choice for testing purposes and free tier).
 •	Create new key pair and download it.Configure security groups, allowing SSH (port 22) and HTTP (port 80).
 •	Launch the instance and connect to it via SSH (In MobaXterm Tool).
- ![Alt Text]("C:\Users\sanju gaikwad\OneDrive\Pictures\Screenshots\Screenshot 2024-12-11 113842.png")
+
+ [EC2 Instance Image]("C:\Users\sanju gaikwad\OneDrive\Pictures\Screenshots\Screenshot 2024-12-11 113842.png")
 
 Step 2:- Install kubectl (Kubernetes CLI)
 
