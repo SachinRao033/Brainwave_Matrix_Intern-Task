@@ -14,27 +14,33 @@ Step 1:- Launch a New EC2 Instance (Amazon Linux - t2.micro)
 
 Step 2:- Install kubectl (Kubernetes CLI)
 •	After connecting to the EC2 instance, run the following commands to install kubectl:
+
 curl -O https://s3.us-west-2.amazonaws.com/amazon-eks/1.30.0/2024-05-12/bin/linux/amd64/kubectl
 sudo mv ./kubectl /usr/local/bin
 chmod +x ./kubectl
 kubectl version
+
 •	This will download kubectl, move it to /usr/local/bin for execution, apply the necessary permissions, and verify the version.
  
 
 Step 3:- Install AWS CLI
 •	Install the AWS Command Line Interface (CLI) using these commands:
+
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 unzip awscliv2.zip
 sudo ./aws/install
 aws --version
+
 •	This installs the latest version of the AWS CLI and verifies the installation.
  
 
 Step 4:- Install eksctl (EKS Cluster Management Tool)
 •	To simplify EKS cluster creation, install eksctl:
+
 curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
 sudo mv /tmp/eksctl /usr/local/bin
 eksctl version
+
 •	This command downloads and installs eksctl, a command-line tool for managing EKS clusters.
  
 
@@ -52,8 +58,10 @@ Step 6:- Attach IAM Role to the EC2 Instance
 
 Step 7:- Create EKS Cluster using eksctl
 •	To create the EKS cluster, use the eksctl command. 
+
 Mumbai (ap-south-1):
 eksctl create cluster --name demo-cluster --region ap-south-1 --node-type t2.micro --zones ap-south-1a,ap-south-1b
+
 •	This will create a new EKS cluster in the specified region, using the specified instance type and zones.
  
 
@@ -61,17 +69,22 @@ eksctl create cluster --name demo-cluster --region ap-south-1 --node-type t2.mic
 
 Step 8:- Deploy Nginx Pods on Kubernetes
 •	Create a Deployment for Nginx: To deploy an given demo-web-httpd application with 1 replicas:
+
 kubectl create deployment demo-web-httpd  --image=ss1927/httpd          --replicas=1   --port=80
+
 •	Check the Status:
 List all resources - kubectl get all
 List the running pods - kubectl get pods
+
 •	After all this,To run the webapp with help this command:
 Kubectl run webapp –image=ss1927/httpd
  
 
 Step 9:- Expose the Deployment as a Service
 •	To expose the Nginx deployment via a LoadBalancer, follow these steps:
+
 Expose the Deployment: kubectl expose deployment demo--web-httpd    --port=80 --type=LoadBalancer
+
 Check the Service: To see the service details and external IP (LoadBalancer IP)
 kubectl get services -o wide
 
