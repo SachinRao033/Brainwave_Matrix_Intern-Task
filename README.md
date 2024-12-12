@@ -47,17 +47,19 @@ Step 4:- Install eksctl (EKS Cluster Management Tool)
 ![Install eksctl Image](https://github.com/user-attachments/assets/64409869-2ded-48c4-ae03-1ac9f7a29657)
 
 Step 5:- Create a New IAM Role
+
 •	Go to the IAM section in the AWS Console and create a new role with the following permissions:  
   o	IAM FullAccess – We need create all these roles individually (or) otherwise we give one role is “AdministratorAccess” (VPC FullAccess,EC2    FullAccess,CloudFormation FullAccess).   
  
-![IAM Role Image](https://github.com/user-attachments/assets/af5371ee-5af4-496e-a779-7f1c1f4a3e8b)
+![IAM Role Image](https://github.com/user-attachments/assets/db383e7a-1100-4183-adbc-8bba42a9d24f)
 
-Step 6:- Attach IAM Role to the EC2 Instance  
+Step 6:- Attach IAM Role to the EC2 Instance 
+
 •	Attach the created role to the EC2 instance used as the management host. This allows the instance to interact with other AWS services.  
 
-![Attach IAM role to EC2 Instance](https://github.com/user-attachments/assets/db383e7a-1100-4183-adbc-8bba42a9d24f)
+![Attach IAM role to EC2 Instance](https://github.com/user-attachments/assets/a4475397-b88f-4f03-b33a-44480594e039)
 
-
+![Attach IAM to EC2](https://github.com/user-attachments/assets/26b5d7ef-65a3-4f3d-8751-a41a6a8fca6d)
 
 Step 7:- Create EKS Cluster using eksctl 
 
